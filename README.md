@@ -13,7 +13,9 @@ _Note:_ If you just wanna play around with it, take a look at [OpenResty](http:/
 
 ## Installation
 
-Once you have nginx and the needed plugins installed you can either start nginx up with the the configuration in this repository or you can copy the 'server'-section into your own nginx.conf
+Once you have nginx and the needed plugins installed you can either start nginx up with the the configuration in this repository or you can copy the 'server'-section into your own nginx.conf.
+
+You also need to setup a database in your PostgreSQL-server and create a table called "links". Use the config/db.sql file to do it for you. After you are done adjust the settings to your environment in the nginx configuration.
 
 ## Usage
 
