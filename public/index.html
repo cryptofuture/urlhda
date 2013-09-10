@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>sebas</title>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+</head>
+<body>
+  <form action="/add" id="urlform" method="post" accept-charset="utf-8">
+    <p>
+      <label for="url">Url:</label>
+      <input type="text" name="url" value="" placeholder="http://example.org" id="url" />
+    </p>
+    <p><input type="submit" value="Shorten &rarr;"></p>
+  </form>
+  <script>
+    var form = $('#urlform');
+      form.submit(function () {
+          $.ajax({
+              type: form.attr('method'),
+              url: form.attr('action') + '?url=' + $('#url').val(),
+              success: function (data) {
+                  console.log(data)
+              }
+          });
+
+          return false;
+      });
+  </script>
+</body>
+</html>
