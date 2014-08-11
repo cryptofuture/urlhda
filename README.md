@@ -1,7 +1,7 @@
 # urlhda
 
 Solution for URL shortening: nginx, postgres, json.  
-Includes: website, android app, and simple bash script for url shortening.  
+Includes: website, android application, and simple bash script for url shortening.  
 Live example: [hda.me](https://hda.me)
 <p align="center">
  <img src="https://raw.githubusercontent.com/cryptofuture/urlhda/master/android_app/gradle/img/shot.png"/>
@@ -63,3 +63,7 @@ This will give you JSON-response back with the generated 5 character UID:
 ```
 
 With that you can go to for example to *https://website.name/abcd5* and you will be redirected to http://add.me
+
+##Other
+Original idea: Sebastian Gräßl, forked from https://github.com/bastilian/sebas  
+Bitcoin donate: **1N5czHaoSLukFSTq2ZJujaWGjkmBxv2dT9**
