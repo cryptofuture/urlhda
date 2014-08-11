@@ -13,16 +13,22 @@ Live example: [hda.me](https://hda.me)
 * [nginx postgres module](https://github.com/FRiCKLE/ngx_postgres) 
 * [nginx json module](https://github.com/openresty/rds-json-nginx-module)
 
-## Configuration location and installation
+## Configuration examples location and installation
 
 * [conf folder](https://github.com/cryptofuture/urlhda/tree/master/conf) includes nginx.conf section example, site-enabled/sitename (vhost) example, sql file to import and debian rules file example useful for package rebuild.
 * [script folder](https://github.com/cryptofuture/urlhda/tree/master/script) includes shortening bash script example.
 * [website folder](https://github.com/cryptofuture/urlhda/tree/master/website) includes main url shortener website page example
 * [android_app folder](https://github.com/cryptofuture/urlhda/tree/master/android_app) includes example android application, where apk file is actual aplication used for [hda.me](https://hda.me) url shortener website.  
 
-Once you have nginx and the needed modules installed you can either start nginx up with the the configuration in this repository or you can copy the 'server'-section into your own nginx.conf.
+Once you have nginx and the needed modules installed you can start nginx up with the the configuration in this found in /conf and /website folders.  
 
-You also need to setup a database in your PostgreSQL-server and create a table called "links". Use the config/db.sql file to do it for you. After you are done adjust the settings to your environment in the nginx configuration.
+You also need to setup a database in your PostgreSQL-server and create separate table, don't forget set password. Use the /config/database.sql file to do it for you. After you are done adjust the settings to your environment in the nginx configuration.  
+**Example:**
+Creating user and database:  
+CREATE USER "user" WITH PASSWORD 'password';  
+CREATE DATABASE databasename WITH OWNER "user";  
+Importing:  
+psql -h localhost -d databasename -U user -f database.sql  
 
 ## Usage
 
