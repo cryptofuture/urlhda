@@ -1,15 +1,16 @@
-# sebas
+# urlhda
 
-This is an (example) configuration for a nginx url-shortener.
-It is very small, simple and probably fast.
+Solution for URL shortening: nginx, postgres, json.
+Includes: website, android app, and simple bash script for url shortening.
+Live example: [hda.me](https://hda.me)
 
 ## Requirements
 
 * [nginx](http://nginx.org)
-* [nginx posgres module](https://github.com/FRiCKLE/ngx_postgres/)
+* [nginx devel kit](https://github.com/simpl/ngx_devel_kit) - lua-nginx-module dependency
 * [nginx lua module](https://github.com/chaoslawful/lua-nginx-module)
-
-_Note:_ If you just wanna play around with it, take a look at [OpenResty](http://openresty.org) which includes all needed modules out of the box.
+* [nginx postgres module](https://github.com/FRiCKLE/ngx_postgres)
+* [nginx json module](https://github.com/openresty/rds-json-nginx-module)
 
 ## Installation
 
@@ -30,26 +31,3 @@ This will give you JSON-response back with the generated 5 character UID:
 ```
 
 With that you can go to for example to *http://sebas.dev/abcd5* and you will be redirected to http://bastilian.me
-
-
-## License 
-
-Copyright (c) 2013 Sebastian Gräßl
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in
-all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-THE SOFTWARE.
