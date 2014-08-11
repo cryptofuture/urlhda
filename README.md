@@ -23,18 +23,22 @@ Live example: [hda.me](https://hda.me)
 Once you have nginx and the needed modules installed you can start nginx up with the the configuration in this found in /conf and /website folders.  
 
 You also need to setup a database in your PostgreSQL-server and create separate table, don't forget set password. Use the /config/database.sql file to do it for you. After you are done adjust the settings to your environment in the nginx configuration.  
-**Example:**
-Creating user and database:  
+**Example:**  
+Creating user and database: 
+```
 CREATE USER "user" WITH PASSWORD 'password';  
 CREATE DATABASE databasename WITH OWNER "user";  
+```
 Importing:  
-psql -h localhost -d databasename -U user -f database.sql  
+```
+psql -h localhost -d databasename -U user -f database.sql
+```
 
-## Usage
+## How it works
 
 You can shorten URLs with a POST-request:
 ```
-  curl -X POST http://sebas.dev/add?url=http://bastilian.me
+  curl -X POST https://website.name/add?url=http://add.me
 ```
 
 This will give you JSON-response back with the generated 5 character UID:
@@ -42,4 +46,4 @@ This will give you JSON-response back with the generated 5 character UID:
 [{"uid":"abcd5"}]
 ```
 
-With that you can go to for example to *http://sebas.dev/abcd5* and you will be redirected to http://bastilian.me
+With that you can go to for example to *https://website.name/abcd5* and you will be redirected to http://add.me
