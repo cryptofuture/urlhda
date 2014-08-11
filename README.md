@@ -3,7 +3,9 @@
 Solution for URL shortening: nginx, postgres, json.  
 Includes: website, android app, and simple bash script for url shortening.  
 Live example: [hda.me](https://hda.me)
-
+<p align="center">
+ <img src="https://raw.githubusercontent.com/cryptofuture/urlhda/master/android_app/gradle/img/shot.png"/>
+</p>
 ## Requirements
 
 * [nginx](http://nginx.org) - nginx itself, better use source package from nginx.org repository for your favourite GNU/Linux distribution as base.  
@@ -35,6 +37,9 @@ psql -h localhost -d databasename -U user -f database.sql
 ```
 
 ## How it works
+ <p align="center">
+<img src="https://raw.githubusercontent.com/cryptofuture/urlhda/master/android_app/gradle/img/Diagram1.png"/>
+</p>
 
 You can shorten URLs with a POST-request:
 ```
