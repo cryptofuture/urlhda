@@ -20,7 +20,7 @@ Live example: [hda.me](https://hda.me)
 * [conf folder](https://github.com/cryptofuture/urlhda/tree/master/conf) includes nginx.conf section example, site-enabled/sitename (vhost) example, sql file to import and debian rules file example useful for package rebuild.
 * [script folder](https://github.com/cryptofuture/urlhda/tree/master/script) includes shortening bash script example.
 * [website folder](https://github.com/cryptofuture/urlhda/tree/master/website) includes main url shortener website page example
-* [android_app folder](https://github.com/cryptofuture/urlhda/tree/master/android_app) includes example android application, where apk file is actual aplication used for [hda.me](https://hda.me) url shortener website.  
+* [android_app folder](https://github.com/cryptofuture/urlhda/tree/master/android_app) includes example android application, where apk file is actual application used for [hda.me](https://hda.me) url shortener website.  
 
 Once you have nginx and the needed modules installed you can start nginx up with the the configuration in this found in /conf and /website folders.  
 
