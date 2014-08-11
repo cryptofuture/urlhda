@@ -41,9 +41,9 @@ psql -h localhost -d databasename -U user -f database.sql
 1. [Script](https://raw.githubusercontent.com/cryptofuture/urlhda/master/script/urlhda)  
 Edit host, chmod 755, and copy to /usr/local/bin/ 
 Usage: urlhda http[s]://your_long_url_here  
-2. Website 
+2. [Website](https://raw.githubusercontent.com/cryptofuture/urlhda/master/website/index.html)   
 Install, configure, edit [index.html](https://raw.githubusercontent.com/cryptofuture/urlhda/master/website/index.html) to change appearance for your needs and your done.  
-3. Android app  
+3. [Android app](https://github.com/cryptofuture/urlhda/tree/master/android_app)  
 Change host in [index.html](https://raw.githubusercontent.com/cryptofuture/urlhda/master/android_app/app/src/main/assets/index.html), import to android studio, sign apk with your personal key and finally build apk.
 
 
