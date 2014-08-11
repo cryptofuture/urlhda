@@ -1,0 +1,50 @@
+server {
+	listen  80;
+	#listen  443 ssl spdy;
+	server_name servername.org;
+	ssl_certificate /path/servername.crt;
+	ssl_certificate_key /path/.servername.key;
+
+	# OCSP Stapling
+	#ssl_stapling on;
+	#ssl_stapling_verify on;
+	#ssl_trusted_certificate /path/
+	#resolver ;
+
+	root /var/www/;
+	error_log /var/log/nginx/servername.log;
+	access_log /var/log/nginx/servername.log;
+
+	index index.html;
+
+	location ~ "^/([0-9a-zA-Z]{5})$" {
+	content_by_lua '
+	local res = ngx.location.capture("/lookup",
+	{ args = { query = string.sub(ngx.var.request_uri, 2) } }
+	);
+	ngx.redirect(res.body);
+	';
+	}
+
+	location /lookup {
+	internal;
+
+	postgres_pass pgdb;
+	postgres_escape $esc_uid $arg_query;
+	postgres_query GET "SELECT url FROM links WHERE uid = $esc_uid";
+	postgres_output text;
+	}
+
+	location ~ ^/add {
+	# Recommended include "/etc/nginx/naxsi.rules";
+	postgres_pass pgdb;
+	rds_json on;
+
+
+	postgres_escape $url $arg_url;
+	postgres_query POST "INSERT INTO links (uid, url) VALUES((SELECT substring(md5(random()::text||$url), 0, 6)), $url) RETURNING uid;";
+	postgres_rewrite POST changes 201;
+	}
+
+
+	}
