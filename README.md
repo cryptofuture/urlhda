@@ -4,7 +4,7 @@ Solution for URL shortening: nginx, postgres, json.
 Includes: website, android application, and simple bash script for url shortening.  
 Live example: [hda.me](https://hda.me)
 <p align="center">
- <img src="https://raw.githubusercontent.com/cryptofuture/urlhda/master/android_app/gradle/img/shot.png"/>
+ <img src="https://raw.githubusercontent.com/cryptofuture/urlhda-android/master/gradle/img/shot.png"/>
 </p>
 ## Requirements
 
