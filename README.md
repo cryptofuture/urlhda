@@ -49,7 +49,7 @@ Change host in [index.html](https://raw.githubusercontent.com/cryptofuture/urlhd
 
 ## How it works
  <p align="center">
-<img src="https://raw.githubusercontent.com/cryptofuture/urlhda/master/android_app/gradle/img/Diagram1.png"/>
+<img src="https://raw.githubusercontent.com/cryptofuture/urlhda-android/master/gradle/img/Diagram1.png"/>
 </p>
 
 You can shorten URLs with a POST-request:
