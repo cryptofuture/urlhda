@@ -1,0 +1,3 @@
+[submodule "urlhda-android"]
+	path = urlhda-android
+	url = https://github.com/cryptofuture/urlhda-android
