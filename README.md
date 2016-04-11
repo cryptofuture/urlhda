@@ -42,7 +42,7 @@ Usage: urlhda http[s]://your_long_url_here
 2. [Website](https://raw.githubusercontent.com/cryptofuture/urlhda/master/website/index.html)   
 Install, configure, edit [index.html](https://raw.githubusercontent.com/cryptofuture/urlhda/master/website/index.html) to change appearance for your needs and your done.  
 3. [Android app](https://github.com/cryptofuture/urlhda-android)  
-Change host in [index.html](https://raw.githubusercontent.com/cryptofuture/urlhda-android/master/app/src/main/assets/index.html), import to android studio, sign apk with your personal key and finally build apk.
+Change host in [index.html](https://raw.githubusercontent.com/cryptofuture/urlhda-android/master/app/src/main/assets/index.html), import to android studio and build apk (you can sign it with your personal key).
 
 
 ## How it works
