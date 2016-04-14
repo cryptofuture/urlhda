@@ -1,0 +1,138 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Urlhda by cryptofuture</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
+    <meta name="viewport" content="width=device-width">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Urlhda</h1>
+        <p>Solution for URL shortening: nginx, postgres, json</p>
+
+        <p class="view"><a href="https://github.com/cryptofuture/urlhda">View the Project on GitHub <small>cryptofuture/urlhda</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/cryptofuture/urlhda/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/cryptofuture/urlhda/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/cryptofuture/urlhda">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a id="urlhda" class="anchor" href="#urlhda" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>urlhda</h1>
+
+<p>Solution for URL shortening: nginx, postgres, json.<br>
+Includes: website, android application, and simple bash script for url shortening.<br>
+Live example: <a href="https://hda.me">hda.me</a></p>
+
+<h2>
+<a id="requirements" class="anchor" href="#requirements" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Requirements</h2>
+
+<ul>
+<li>
+<a href="http://nginx.org">nginx</a> - nginx itself, better use source package from nginx.org repository for your favourite GNU/Linux distribution as base.<br>
+</li>
+<li>
+<a href="http://www.postgresql.org/">postgres</a> - better use repository from postgresql.org.<br>
+</li>
+<li>
+<a href="https://github.com/simpl/ngx_devel_kit">nginx devel kit</a> - lua-nginx-module dependency</li>
+<li><a href="https://github.com/chaoslawful/lua-nginx-module">nginx lua module</a></li>
+<li>
+<a href="https://github.com/FRiCKLE/ngx_postgres">nginx postgres module</a> </li>
+<li>
+<a href="https://github.com/openresty/rds-json-nginx-module">nginx json module</a><br>
+Note: As alternative you can install nginx from <a href="https://launchpad.net/%7Ehda-me/+archive/ubuntu/nginx-stable">ppa:hda-me/nginx-stable</a> or try run setup on <a href="https://openresty.org/">openresty</a> project.</li>
+</ul>
+
+<h2>
+<a id="configuration-examples-location-and-installation" class="anchor" href="#configuration-examples-location-and-installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Configuration examples location and installation</h2>
+
+<ul>
+<li>
+<a href="https://github.com/cryptofuture/urlhda/tree/master/conf">conf folder</a> includes nginx.conf section example, site-enabled/sitename (vhost) example, sql file to import and debian rules file example useful for package rebuild.</li>
+<li>
+<a href="https://github.com/cryptofuture/urlhda/tree/master/script">script folder</a> includes shortening bash script example.</li>
+<li>
+<a href="https://github.com/cryptofuture/urlhda/tree/master/website">website folder</a> includes main url shortener website page example</li>
+<li>
+<a href="https://github.com/cryptofuture/urlhda-android">android_app</a> includes example android application, used for <a href="https://hda.me">hda.me</a> url shortener website.</li>
+</ul>
+
+<p>Once you have nginx and the needed modules installed you can start nginx up with the the configuration in this found in /conf and /website folders.  </p>
+
+<p>You also need to setup a database in your PostgreSQL-server and create separate table, don't forget set password. Use the /config/database.sql file to do it for you. After you are done adjust the settings to your environment in the nginx configuration.<br>
+<strong>Example:</strong><br>
+Creating user and database: </p>
+
+<pre><code>CREATE USER "user" WITH PASSWORD 'password';  
+CREATE DATABASE databasename WITH OWNER "user";  
+</code></pre>
+
+<p>Importing:  </p>
+
+<pre><code>psql -h localhost -d databasename -U user -f database.sql
+</code></pre>
+
+<h2>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage</h2>
+
+<ol>
+<li>
+<a href="https://raw.githubusercontent.com/cryptofuture/urlhda/master/script/urlhda">Script</a><br>
+Edit host, chmod 755, and copy to /usr/local/bin/ 
+Usage: urlhda http[s]://your_long_url_here<br>
+</li>
+<li>
+<a href="https://raw.githubusercontent.com/cryptofuture/urlhda/master/website/index.html">Website</a><br>
+Install, configure, edit <a href="https://raw.githubusercontent.com/cryptofuture/urlhda/master/website/index.html">index.html</a> to change appearance for your needs and your done.<br>
+</li>
+<li>
+<a href="https://github.com/cryptofuture/urlhda-android">Android app</a><br>
+Change host in <a href="https://raw.githubusercontent.com/cryptofuture/urlhda-android/master/app/src/main/assets/index.html">index.html</a>, import to android studio and build apk (you can sign it with your personal key).</li>
+</ol>
+
+<h2>
+<a id="how-it-works" class="anchor" href="#how-it-works" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>How it works</h2>
+
+<p></p><p align="center">
+<img src="https://raw.githubusercontent.com/cryptofuture/urlhda-android/master/gradle/img/Diagram1.png">
+</p>
+
+<p>You can shorten URLs with a POST-request:</p>
+
+<pre><code>  curl -X POST https://website.name/add?url=http://add.me
+</code></pre>
+
+<p>This will give you JSON-response back with the generated 5 character UID:</p>
+
+<pre><code>[{"uid":"abcd5"}]
+</code></pre>
+
+<p>With that you can go to for example to <em><a href="https://website.name/abcd5">https://website.name/abcd5</a></em> and you will be redirected to <a href="http://add.me">http://add.me</a></p>
+
+<h2>
+<a id="other" class="anchor" href="#other" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Other</h2>
+
+<p>Original idea: Sebastian Gräßl, forked from <a href="https://github.com/bastilian/sebas">https://github.com/bastilian/sebas</a><br>
+Bitcoin donate: <strong>1N5czHaoSLukFSTq2ZJujaWGjkmBxv2dT9</strong></p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/cryptofuture">cryptofuture</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
