@@ -65,4 +65,4 @@ With that you can go to for example to *https://website.name/abcd5* and you will
 
 ##Other
 Original idea: Sebastian Gräßl, forked from https://github.com/bastilian/sebas  
-Bitcoin donate: **1N5czHaoSLukFSTq2ZJujaWGjkmBxv2dT9**
+Bitcoin donate: 1N5czHaoSLukFSTq2ZJujaWGjkmBxv2dT9
