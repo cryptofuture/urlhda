@@ -12,7 +12,7 @@ Live example: [hda.me](https://hda.me)
 * [nginx lua module](https://github.com/chaoslawful/lua-nginx-module)
 * [nginx postgres module](https://github.com/FRiCKLE/ngx_postgres) 
 * [nginx json module](https://github.com/openresty/rds-json-nginx-module)  
-Note: As alternative you can install nginx from [ppa:hda-me/nginx-stable](https://launchpad.net/~hda-me/+archive/ubuntu/nginx-stable) or try run setup on [openresty](https://openresty.org/) project.
+Note: As alternative you can setup nginx from [ppa:hda-me/nginx-stable](https://gist.github.com/cryptofuture/53efe118c598dcc8eaf402c8544182af) or try run setup on [openresty](https://openresty.org/) project.
 
 ## Configuration examples location and installation
 
