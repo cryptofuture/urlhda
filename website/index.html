@@ -1,49 +1,75 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>hda shortener</title>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
-	<meta name="description" content="hda url shortener.">
-	<meta name="keywords" content="short url, url shortener, fast short url, hda url, tiny url, hda, cute url">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+	<meta property="og:description" content="" />
+	<meta property="og:title" content="" />
+	<meta property="og:site_name" content="" />
+	<meta property="og:image" content="" />
+	<meta name="keywords" content="">
+	<title></title>
 	<link rel="shortcut icon" href="favicon.png">
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-	<script>window.jQuery || document.write('<script src="jquery.min.js"><\/script>')</script>
-	<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+	<link rel="canonical" href="https://">
+	<link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
 <style>
-	body, html {
-	height:100%;
-	padding-top: 50px
-	}
-	form, h2, .center {
-	text-align: center;
-	}
+body, html {
+    height:100%;
+    padding-top: 100px
+    }
+    form, h2, .center {
+    text-align: center;
+    }
 </style>
-</head>
 <body>
 <div class="container">
-	<form action="add" id="urlform" method="POST" accept-charset="utf-8">
-	<div class="control-group">
-	<div class="input-append">
-	<input type="text" id="url" value="" placeholder="Long URL -> hda.me/xxxxx">
-	<input class="btn btn-warning "type="submit" value="Shorten">
+    <form action="add" id="urlform" method="POST" accept-charset="utf-8">
+<div class="form-inline">
+<label class="checkbox">
+    <input type="checkbox" id="urlbox" name="urlbox" title="Enable Strong URL">
+</label>
+<div class="input-group">
+    <input type="text" class="form-control input-lg" id="url" value="" placeholder="Long URL -> hda.me/xxxxx">
+    <span class="input-group-btn">
+    <button class="btn btn-success btn-lg" type="submit">Shorten</button>
+    </span>
 </div>
 </div>
 </form>
 </div>
+<form action="/s/add" id="longform" method="POST" accept-charset="utf-8"></form>
 <script>
-	var form = $('#urlform');
-	form.submit(function () {
-	$.ajax({
-	type: form.attr('method'),
-	url: form.attr('action') + '?url=' + $('#url').val(),
-	success: function (data) {
-	$('#urlform').append('<p style="color:#FFA500">' + 'https://' + location.host + '/' +
-	data[0].uid + '</p>')
-	}
-	});
-	 return false;
-	});
+var form = $('#urlform');
+var form2 = $('#longform');
+
+form.submit(function () {
+if ($('#urlbox').is(':checked')) {
+    tform = form2;
+} else {
+    tform = form;
+}
+$.ajax({
+    type: tform.attr('method'),
+    url: tform.attr('action') + '?url=' + $('#url').val(),
+    success: function (data) {
+    tform.append('<h2 style="color:#5fba7d"><input type="text" title="Click here to select shortened URL" id="result" value="' + 'https://' + location.host + '/' + data[0].uid + '"></h2>')
+    }
+});
+return false;
+});
+</script>
+<script>
+$('body').on('focus', 'input', function (e) {
+    $(this)
+        .one('mouseup', function () {
+            $(this).select();
+            return false;
+        })
+        .select();
+});
 </script>
 </body>
 </html>
