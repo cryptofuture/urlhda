@@ -34,6 +34,11 @@ Importing:
 ```
 psql -h localhost -d databasename -U user -f database.sql
 ```
+Upgrading old installation (database) for [Strong URLs](https://github.com/cryptofuture/urlhda/issues/3) support:
+```
+\c databasename
+ALTER TABLE links ALTER COLUMN uid TYPE character varying(30);
+```
 
 ##Usage
 
