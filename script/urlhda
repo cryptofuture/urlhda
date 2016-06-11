@@ -2,8 +2,14 @@
 #export http_proxy="http://proxy:3128"
 host="https://hda.me/"
 add=$(curl -s -X POST ${host}add?url=$1 | awk -F'[=""]' '{print $4}')
+addstrong=$(curl -s -X POST ${host}s/add?url=$1 | awk -F'[=""]' '{print $4}')
 if [ "$1" == "-h" ]; then
 	echo "Usage: `basename $0` http[s]://your_long_url_here"
+	echo "`-s` will generate Strong URL"
+	exit 0
+fi
+if [ "$1" == "-s" ]; then
+	echo "Your shortened url is:" $host$addstrong
 	exit 0
 fi
 echo "Your shortened url is:" $host$add
