@@ -15,7 +15,7 @@ Live example: [hda.me](https://hda.me)
 [<img src="https://f-droid.org/badge/get-it-on.png"
       alt="Get it on F-Droid"
       height="80">](https://f-droid.org/app/me.hda.urlhda)
-* Or you can use Urlhda from CLI.
+* Or you can use Urlhda from CLI.  
 Install it via PPA.
 ```bash
 sudo apt-add-repository ppa:hda-me/urlhda
