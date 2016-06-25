@@ -5,7 +5,7 @@ Includes: website, android application, and simple bash script for url shortenin
 #####Features:  
 * [Strong URL](https://github.com/cryptofuture/urlhda/issues/3) (15 symbols long uid for shorted URLs, 5 symbols by default).
 * Fast copy-paste. Auto selection in browser, and copy button in android app.
-* Ability to share URLs (Android App only).
+* Ability to share URLs (Android App only).  
 Live example: [hda.me](https://hda.me)
 
 
