@@ -64,16 +64,17 @@ ALTER TABLE links ALTER COLUMN uid TYPE character varying(30);
 ### Usage
 
 1. [Script](https://raw.githubusercontent.com/cryptofuture/urlhda/master/script/urlhda)  
-Edit host, chmod 755, and copy to /usr/local/bin/ 
+Edit host, chmod 755, and copy to /usr/local/bin/  
 Or you can install it via PPA: 
-```bash
+
+ ```bash
 sudo apt-add-repository ppa:hda-me/urlhda
 sudo apt-get update
 sudo apt-get install urlhda
 ```
-Usage:
 
-```bash
+ Usage:
+ ```bash
 # 5 symbols uid (default)  
 urlhda http[s]://your_long_url_here  
 # To generate Strong URL (15 symbols uid)  
