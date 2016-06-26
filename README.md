@@ -72,10 +72,13 @@ sudo apt-get update
 sudo apt-get install urlhda
 ```
 Usage:
+
+```bash
 # 5 symbols uid (default)  
 urlhda http[s]://your_long_url_here  
 # To generate Strong URL (15 symbols uid)  
 urlhda -s http[s]://your_long_url_here 
+```
 
 2. [Website](https://raw.githubusercontent.com/cryptofuture/urlhda/master/website/index.html)   
 Edit [index.html](https://raw.githubusercontent.com/cryptofuture/urlhda/master/website/index.html) to change appearance for your needs and your done.  
