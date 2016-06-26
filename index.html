@@ -39,9 +39,10 @@
 <ul>
 <li>You can use <a href="https://hda.me">hda.me</a> website.</li>
 <li>You can use HDA URL (Urlhda) android application<br />
-<a href="https://f-droid.org/app/me.hda.urlhda">&lt;img src="<a href="https://f-droid.org/badge/get-it-on.png">https://f-droid.org/badge/get-it-on.png</a>"
-alt="Get it on F-Droid"
-height="80"></a></li>
+<a href="https://f-droid.org/app/me.hda.urlhda">
+    <img src="https://f-droid.org/badge/get-it-on.png"
+         alt="Get it on F-Droid" height="80">
+</a></li>
 <li>Or you can use Urlhda from CLI.<br />
 Install it via PPA.
 <pre><code class="language-bash">sudo apt-add-repository ppa:hda-me/urlhda
@@ -49,8 +50,9 @@ sudo apt-get update
 sudo apt-get install urlhda</code></pre>
 <p>Or copy <a href="https://raw.githubusercontent.com/cryptofuture/urlhda/master/script/urlhda">this script</a> to <code>/usr/local/bin</code></p></li>
 </ul>
-<h2>
-<a id="requirements" class="anchor" href="#requirements" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Requirements</h2>
+<h2>To setup it yourself</h2>
+<h3>
+<a id="requirements" class="anchor" href="#requirements" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Requirements</h3>
 
 <ul>
 <li>
@@ -69,8 +71,8 @@ sudo apt-get install urlhda</code></pre>
 Note: As alternative you can install nginx from <a href="https://launchpad.net/%7Ehda-me/+archive/ubuntu/nginx-stable">ppa:hda-me/nginx-stable</a> or try run setup on <a href="https://openresty.org/">openresty</a> project.</li>
 </ul>
 
-<h2>
-<a id="configuration-examples-location-and-installation" class="anchor" href="#configuration-examples-location-and-installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Configuration examples location and installation</h2>
+<h3>
+<a id="configuration-examples-location-and-installation" class="anchor" href="#configuration-examples-location-and-installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Configuration examples location and installation</h3>
 
 <ul>
 <li>
@@ -83,7 +85,7 @@ Note: As alternative you can install nginx from <a href="https://launchpad.net/%
 <a href="https://github.com/cryptofuture/urlhda-android">android_app</a> includes example android application, used for <a href="https://hda.me">hda.me</a> url shortener website.</li>
 </ul>
 
-<p>Once you have nginx and the needed modules installed you can start nginx up with the the configuration in this found in /conf and /website folders.  </p>
+<p>Once you have nginx and the needed modules installed you can start nginx with the the configuration from /conf and /website folders.</p>
 
 <p>You also need to setup a database in your PostgreSQL-server and create separate table, don't forget set password. Use the /config/database.sql file to do it for you. After you are done adjust the settings to your environment in the nginx configuration.<br>
 <strong>Example:</strong><br>
@@ -98,22 +100,28 @@ CREATE DATABASE databasename WITH OWNER "user";
 <pre><code>psql -h localhost -d databasename -U user -f database.sql
 </code></pre>
 
-<h2>
-<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage</h2>
+<h3>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage</h3>
 
 <ol>
-<li>
-<a href="https://raw.githubusercontent.com/cryptofuture/urlhda/master/script/urlhda">Script</a><br>
+<li><a href="https://raw.githubusercontent.com/cryptofuture/urlhda/master/script/urlhda">Script</a><br />
 Edit host, chmod 755, and copy to /usr/local/bin/ 
-Usage: urlhda http[s]://your_long_url_here<br>
-</li>
-<li>
-<a href="https://raw.githubusercontent.com/cryptofuture/urlhda/master/website/index.html">Website</a><br>
-Install, configure, edit <a href="https://raw.githubusercontent.com/cryptofuture/urlhda/master/website/index.html">index.html</a> to change appearance for your needs and your done.<br>
-</li>
-<li>
-<a href="https://github.com/cryptofuture/urlhda-android">Android app</a><br>
-Change host in <a href="https://raw.githubusercontent.com/cryptofuture/urlhda-android/master/app/src/main/assets/index.html">index.html</a>, import to android studio and build apk (you can sign it with your personal key).</li>
+Or you can install it via PPA: 
+<pre><code class="language-bash">sudo apt-add-repository ppa:hda-me/urlhda
+sudo apt-get update
+sudo apt-get install urlhda</code></pre>
+<p>Usage:</p></li>
+</ol>
+<pre><code class="language-bash"># 5 symbols uid (default)  
+urlhda http[s]://your_long_url_here  
+# To generate Strong URL (15 symbols uid)  
+urlhda -s http[s]://your_long_url_here </code></pre>
+<ol>
+<li><a href="https://raw.githubusercontent.com/cryptofuture/urlhda/master/website/index.html">Website</a> <br />
+Edit <a href="https://raw.githubusercontent.com/cryptofuture/urlhda/master/website/index.html">index.html</a> to change appearance for your needs and your done.</li>
+</ol>
+<li><a href="https://github.com/cryptofuture/urlhda-android">Android app</a><br />
+<a href="https://f-droid.org/repository/browse/?fdid=me.hda.urlhda">Install app</a> and change hostname URL in application Settings (gear icon).</li>
 </ol>
 
 <h2>
