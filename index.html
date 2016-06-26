@@ -99,18 +99,17 @@ CREATE DATABASE databasename WITH OWNER "user";
 <pre><code>psql -h localhost -d databasename -U user -f database.sql
 </code></pre>
 
-<h3>
-<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage</h3>
-
+<h3>Usage</h3>
 <ol>
 <li><a href="https://raw.githubusercontent.com/cryptofuture/urlhda/master/script/urlhda">Script</a><br />
 Edit host, chmod 755, and copy to /usr/local/bin/ 
-Or you can install it via PPA: 
+Or you can install it via PPA: </li>
+</ol>
 <pre><code class="language-bash">sudo apt-add-repository ppa:hda-me/urlhda
 sudo apt-get update
-sudo apt-get install urlhda</code></pre>
-<p>Usage:</p></li>
-</ol>
+sudo apt-get install urlhda
+</code></pre>
+<p>Usage:</p>
 <pre><code class="language-bash"># 5 symbols uid (default)  
 urlhda http[s]://your_long_url_here  
 # To generate Strong URL (15 symbols uid)  
