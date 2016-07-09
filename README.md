@@ -8,6 +8,8 @@ Includes: website, android application, and simple bash script for url shortenin
 * Ability to share URLs (Android App only).  
 Live example: [hda.me](https://hda.me)
 
+> hda.me down now. Provider terminated account (without any message or warning), and lost all backups and data. Most likely I'll be looking for another VPS/VDS provider. Since thats not first all data lose with current provider. I can't say now, how long things will take.
+
 
 ## To use it as service
 * You can use [hda.me](https://hda.me) website.
