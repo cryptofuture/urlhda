@@ -14,8 +14,8 @@
 	<link rel="shortcut icon" href="favicon.png">
 	<link rel="canonical" href="https://">
 	<link href="//cdnjs.cloudflare.com" rel="preconnect" crossorigin>
-	<link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
-	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+	<link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.3/css/bootstrap.min.css" rel="stylesheet">
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <style>
 body, html {
     height:100%;
@@ -24,19 +24,28 @@ body, html {
     form, h2, .center {
     text-align: center;
     }
+    #result {
+    color:#5fba7d;
+    }
+    .col-centered {
+    float: none;
+    margin: 0 auto;
+    }
 </style>
 <body>
 <div class="container">
     <form action="add" id="urlform" method="POST" accept-charset="utf-8">
 <div class="form-inline">
-<label class="checkbox">
-    <input type="checkbox" id="urlbox" name="urlbox" title="Enable Strong URL">
-</label>
+<div class="form-group">
 <div class="input-group">
-    <input type="url" class="form-control input-lg" id="url" value="" placeholder="Long URL -> hda.me/xxxxx">
+    <span class="input-group-addon">
+    <input type="checkbox" id="urlbox" name="urlbox" title="Enable Strong URL"/>
+    </span>
+    <input type="url" class="form-control form-control-lg" id="url" value="" placeholder="Long URL -> your.domain/xxxxx">
     <span class="input-group-btn">
     <button class="btn btn-success btn-lg" type="submit">Shorten</button>
     </span>
+</div>
 </div>
 </div>
 </form>
@@ -56,7 +65,7 @@ $.ajax({
     type: tform.attr('method'),
     url: tform.attr('action') + '?url=' + $('#url').val(),
     success: function (data) {
-    tform.append('<h2 style="color:#5fba7d"><input type="text" title="Click here to select shortened URL" id="result" value="' + 'https://' + location.host + '/' + data[0].uid + '"></h2>')
+    tform.append('</br><div class="col-sm-3 col-centered"><input type="text" title="Click here to select shortened URL" id="result" class="form-control form-control-lg" value="' + 'https://' + location.host + '/' + data[0].uid + '"></div>')
     }
 });
 return false;
