@@ -16,6 +16,15 @@ server {
 	access_log /var/log/nginx/servername.log;
 
 	index index.html;
+	# Naxsi rules example
+	#include /etc/nginx/naxsi.rules;
+	#BasicRule  wl:1101 "mz:$URL:/add|$ARGS_VAR:url";
+	#BasicRule  wl:1100 "mz:$URL:/add|$ARGS_VAR:url";
+	#BasicRule  wl:16 "mz:$URL:/add|BODY";
+	#BasicRule  wl:1101 "mz:$URL:/s/add|$ARGS_VAR:url";
+	#BasicRule  wl:1100 "mz:$URL:/s/add|$ARGS_VAR:url";
+	#BasicRule  wl:16 "mz:$URL:/s/add|BODY";
+
 
 	location ~ "^/([0-9a-zA-Z]{5})$" {
 	content_by_lua '
@@ -45,23 +54,18 @@ server {
 	}
 
 	location ~ ^/add {
-	# Recommended include "/etc/nginx/naxsi.rules";
 	postgres_pass pgdb;
 	rds_json on;
-
 	postgres_escape $url $arg_url;
 	postgres_query POST "INSERT INTO links (uid, url) VALUES((SELECT substring(md5(random()::text||$url), 0, 6)), $url) RETURNING uid;";
 	postgres_rewrite POST changes 201;
 	}
 	
 	location ~ ^/s/add {
-	#include "/etc/nginx/naxsi.rules";
 	postgres_pass pgdb;
 	rds_json on;
 	postgres_escape $url $arg_url;
 	postgres_query POST "INSERT INTO links (uid, url) VALUES((SELECT substring(md5(random()::text||$url), 0, 16)), $url) RETURNING uid;";
 	postgres_rewrite POST changes 201;
 	}
-
-
-	}
+}
