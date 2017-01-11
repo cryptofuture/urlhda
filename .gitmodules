@@ -1,3 +1,6 @@
 [submodule "urlhda-android"]
 	path = android_app
 	url = https://github.com/cryptofuture/urlhda-android
+[submodule "tizen_app"]
+	path = tizen_app
+	url = https://github.com/cryptofuture/urlhda-tizen
