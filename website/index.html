@@ -14,24 +14,8 @@
 	<link rel="shortcut icon" href="favicon.png">
 	<link rel="canonical" href="https://">
 	<link href="//cdnjs.cloudflare.com" rel="preconnect" crossorigin>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.5/css/bootstrap.min.css" integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" integrity="sha384-3ceskX3iaEnIogmQchP8opvBy3Mi7Ce34nWjpBIwVTHfGYWQS9jwHDVRnpKKHJg7" crossorigin="anonymous"></script>
-<style>
-body, html {
-    height:100%;
-    padding-top: 100px
-    }
-    form, h2, .center {
-    text-align: center;
-    }
-    #result {
-    color:#5fba7d;
-    }
-    .col-centered {
-    float: none;
-    margin: 0 auto;
-    }
-</style>
+	<link rel="stylesheet" href="main.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" integrity="sha384-3ceskX3iaEnIogmQchP8opvBy3Mi7Ce34nWjpBIwVTHfGYWQS9jwHDVRnpKKHJg7" crossorigin="anonymous"></script>
 <body>
 <div class="container">
     <form action="add" id="urlform" method="POST" accept-charset="utf-8">
@@ -51,35 +35,6 @@ body, html {
 </form>
 </div>
 <form action="/s/add" id="longform" method="POST" accept-charset="utf-8"></form>
-<script>
-var form = $('#urlform');
-var form2 = $('#longform');
-
-form.submit(function () {
-if ($('#urlbox').is(':checked')) {
-    tform = form2;
-} else {
-    tform = form;
-}
-$.ajax({
-    type: tform.attr('method'),
-    url: tform.attr('action') + '?url=' + $('#url').val(),
-    success: function (data) {
-    tform.append('</br><div class="col-sm-3 col-centered"><input type="text" title="Click here to select shortened URL" id="result" class="form-control form-control-lg" value="' + 'https://' + location.host + '/' + data[0].uid + '"></div>')
-    }
-});
-return false;
-});
-</script>
-<script>
-$('body').on('focus', 'input', function (e) {
-    $(this)
-        .one('mouseup', function () {
-            $(this).select();
-            return false;
-        })
-        .select();
-});
-</script>
+<script src="base.js"></script>
 </body>
 </html>
