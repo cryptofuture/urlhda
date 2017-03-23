@@ -41,9 +41,9 @@ Note: As alternative you can setup nginx from [ppa:hda-me/nginx-stable](https://
 * [script folder](https://github.com/cryptofuture/urlhda/tree/master/script) includes shortening bash script example
 * [website folder](https://github.com/cryptofuture/urlhda/tree/master/website) includes url shortener website page example
 * [android_app](https://github.com/cryptofuture/urlhda-android) android application, used for [hda.me](https://hda.me) url shortener website
-* [tizen app](https://github.com/cryptofuture/urlhda-tizen) tizen application, used for [hda.me](https://hda.me) url shortener website  
-Once you have nginx and modules installed you can start nginx with the the configuration from /conf and /website folders
+* [tizen app](https://github.com/cryptofuture/urlhda-tizen) tizen application, used for [hda.me](https://hda.me) url shortener website 
 
+Once you have nginx and modules installed you can start nginx with the the configuration from /conf and /website folders
 You also need to setup a database in your PostgreSQL-server and create separate table, don't forget set password. Use the /config/database.sql file to do it for you. After you are done adjust the settings to your environment in the nginx configuration.  
 
 Creating user and database: 
