@@ -78,9 +78,9 @@ urlhda -s http[s]://your_long_url_here
 ```
 
 2. [Website](https://raw.githubusercontent.com/cryptofuture/urlhda/master/website/index.html)   
-Edit [index.html](https://raw.githubusercontent.com/cryptofuture/urlhda/master/website/index.html) to change appearance for your needs and your done.  
-3. [Android app](https://github.com/cryptofuture/urlhda-android)  
-[Install app](https://f-droid.org/repository/browse/?fdid=me.hda.urlhda) and change hostname URL in application Settings (gear icon).
+Edit [index.html](https://raw.githubusercontent.com/cryptofuture/urlhda/master/website/index.html) to change appearance for your needs and your done
+3. [Android application](https://github.com/cryptofuture/urlhda-android)  
+[Install app](https://f-droid.org/repository/browse/?fdid=me.hda.urlhda) and change hostname URL in application Settings (gear icon)
 
 ## How it works
  <p align="center">
