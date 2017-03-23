@@ -1,7 +1,7 @@
 # urlhda
 
 ###### Open-source URL shortener - Solution for URL shortening: nginx, postgres, json
-Includes: Website, android application, tizen application and simple bash script for url shortening.
+Includes: Website, android application, tizen application and simple bash script for url shortening
 
 ### Features:  
 * [Strong URL](https://github.com/cryptofuture/urlhda/issues/3) (15 symbols long uid for shorted URLs, 5 symbols by default)
