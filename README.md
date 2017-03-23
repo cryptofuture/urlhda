@@ -27,7 +27,7 @@ Or copy [this script](https://raw.githubusercontent.com/cryptofuture/urlhda/mast
 ## Setup it yourself
 
 ### Requirements
-* [nginx](http://nginx.org) - nginx itself, better use source package from nginx.org repository for your favourite GNU/Linux distribution as base 
+* [nginx](http://nginx.org) - nginx itself
 * [postgres](http://www.postgresql.org/) - better use repository from postgresql.org
 * [nginx devel kit](https://github.com/simpl/ngx_devel_kit) - lua-nginx-module dependency
 * [nginx lua module](https://github.com/chaoslawful/lua-nginx-module)
