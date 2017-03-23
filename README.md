@@ -45,7 +45,7 @@ Note: As alternative you can setup nginx from [ppa:hda-me/nginx-stable](https://
 Once you have nginx and modules installed you can start nginx with the the configuration from /conf and /website folders
 
 You also need to setup a database in your PostgreSQL-server and create separate table, don't forget set password. Use the /config/database.sql file to do it for you. After you are done adjust the settings to your environment in the nginx configuration.  
-**Example:**  
+
 Creating user and database: 
 ```
 CREATE USER "user" WITH PASSWORD 'password';  
@@ -71,10 +71,6 @@ Or you can install it via PPA:
 sudo apt-add-repository ppa:hda-me/urlhda
 sudo apt-get update
 sudo apt-get install urlhda
-```
-
- Usage:
- ```bash
 # 5 symbols uid (default)  
 urlhda http[s]://your_long_url_here  
 # To generate Strong URL (15 symbols uid)  
