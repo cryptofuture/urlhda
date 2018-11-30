@@ -7,7 +7,7 @@ Includes: Website, android application, tizen application and simple bash script
 * [Strong URL](https://github.com/cryptofuture/urlhda/issues/3) (15 symbols long uid for shorted URLs, 5 symbols by default)
 * Fast copy-paste. Auto selection in browser, and copy button in android app
 * Ability to share URLs (Android App only)
-Live example: [hda.me](https://hda.me)
+Live example: [hda.me](https://hda.me) (its down due I don't have funds to run it)
 
 ## To use it as a service
 * You can use [hda.me](https://hda.me) website
@@ -82,6 +82,37 @@ Edit [index.html](https://raw.githubusercontent.com/cryptofuture/urlhda/master/w
 3. [Android application](https://github.com/cryptofuture/urlhda-android)  
 [Install app](https://f-droid.org/repository/browse/?fdid=me.hda.urlhda) and change hostname URL in application Settings (gear icon)
 
+## Donation
+
+Consider making a donation, if you like what I doing.
+I working remotely and income is unstable, so every little bit helps.
+
+Also it would be nice if you provide, a note on `admin@hda.me` after making a donation with information what you like and what you want to improve. So, I would consider giving more time and support to particular project.
+
+I also open to reasonable work offers, especially if offer would be close to a field or project I work with.
+
+### E-money & Fiat
+
+#### Yandex Money
+Donation on Yandex Money: https://money.yandex.ru/to/410015241627045)
+#### Advanced Cash
+Open https://wallet.advcash.com/pages/transfer/wallet and use `mmail@sent.com` in `Specify the recipient's wallet or e-mail` field
+#### PayPal
+Donation with PayPal: https://paypal.me/hdadonation
+#### Payeer
+Donation with Payeer: On https://payeer.com/en/account/send/ use `P2865115` in `Account, e-mail or phone number` field
+
+### Cryptocurrency
+
+#### Bitcoin
+Address is `1N5czHaoSLukFSTq2ZJujaWGjkmBxv2dT9`
+#### Musicoin
+Address is `0xf449f8c17a056e9bfbefe39637c38806246cb2c9`
+#### Ethereum
+Address is `0x23459a89eAc054bdAC1c13eB5cCb39F42574C26a`
+#### Other
+I could provide you with some relatively cheap "hardware" donation options directly to my PO Box, if you prefer real gifts. Ask for details on `admin@hda.me`
+
 ## How it works
  <p align="center">
 <img src="https://raw.githubusercontent.com/cryptofuture/urlhda-android/master/gradle/img/Diagram1.png"/>
@@ -101,4 +132,3 @@ With that you can go to for example to *https://website.name/abcd5* and you will
 
 ## Other
 Original idea: Sebastian Gräßl, forked from https://github.com/bastilian/sebas  
-Bitcoin donate: [1N5czHaoSLukFSTq2ZJujaWGjkmBxv2dT9](bitcoin:1NVMCeoBfTAJQ1qwX2Dx1C8zkcRCQWwHBq?label=Donation)
