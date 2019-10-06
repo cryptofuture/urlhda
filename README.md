@@ -10,7 +10,6 @@ Includes: Website, android application, tizen application and simple bash script
 Live example: [hda.me](https://hda.me) (its down due I don't have funds to run it)
 
 ## To use it as a service
-* You can use [hda.me](https://hda.me) website
 * You can use HDA URL (Urlhda) android application  
 [<img src="https://f-droid.org/badge/get-it-on.png"
       alt="Get it on F-Droid"
